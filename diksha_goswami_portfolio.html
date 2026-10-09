@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal portfolio of Diksha Goswami, a Computer Science and Engineering undergraduate based in Guwahati, Assam, India.">
+  <title>Diksha Goswami | Personal Portfolio</title>
+  <style>
+    :root {
+      --bg: #070b18;
+      --panel: rgba(13, 22, 43, 0.82);
+      --text: #f4f7ff;
+      --muted: #b8c5dc;
+      --cyan: #38d5ff;
+      --blue: #3678ff;
+      --line: rgba(174, 201, 255, 0.18);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.65;
+      background:
+        radial-gradient(ellipse at 4% 40%, rgba(0, 93, 255, 0.44), transparent 38%),
+        radial-gradient(ellipse at 84% 78%, rgba(0, 163, 255, 0.23), transparent 42%),
+        linear-gradient(145deg, #070b18 5%, #07152e 55%, #030816 100%);
+    }
+    a { color: inherit; }
+    .wrap { width: min(1060px, calc(100% - 40px)); margin: 0 auto; }
+    header {
+      padding: 24px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand { font-size: 1.1rem; font-weight: 800; letter-spacing: .08em; text-decoration: none; }
+    .brand span { color: var(--cyan); }
+    nav { display: flex; flex-wrap: wrap; gap: 22px; }
+    nav a { color: var(--muted); text-decoration: none; font-size: .92rem; }
+    nav a:hover, nav a:focus-visible { color: var(--cyan); }
+    .hero { min-height: 500px; display: flex; align-items: center; padding: 76px 0 82px; }
+    .eyebrow {
+      color: var(--cyan); text-transform: uppercase; letter-spacing: .2em;
+      font-size: .72rem; font-weight: 800; margin: 0 0 18px;
+    }
+    h1 { margin: 0; font-size: clamp(2.7rem, 7vw, 5.25rem); line-height: 1.04; letter-spacing: -.055em; }
+    h1 span {
+      display: block;
+      background: linear-gradient(90deg, var(--cyan), #5990ff 75%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      padding-bottom: 8px;
+    }
+    .intro { color: var(--muted); font-size: 1.05rem; max-width: 680px; margin: 22px 0 28px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 11px 17px; border-radius: 9px; text-decoration: none; font-weight: 700;
+      border: 1px solid var(--line); transition: transform .18s ease, border-color .18s ease;
+    }
+    .button:hover { transform: translateY(-2px); border-color: var(--cyan); }
+    .button.primary { background: linear-gradient(100deg, #16bfe9, #3678ff); color: #041024; border: 0; }
+    section { padding: 26px 0 54px; scroll-margin-top: 22px; }
+    .section-heading { display: flex; align-items: baseline; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; }
+    h2 { margin: 0; font-size: clamp(1.55rem, 4vw, 2.1rem); letter-spacing: -.03em; }
+    .kicker { color: var(--cyan); font-size: .85rem; }
+    .card {
+      border: 1px solid var(--line); border-radius: 16px; padding: 24px;
+      background: linear-gradient(135deg, rgba(18, 32, 61, .88), rgba(8, 17, 37, .78));
+      box-shadow: 0 18px 55px rgba(0, 0, 0, .16);
+    }
+    .card p { color: var(--muted); margin: 8px 0 0; }
+    .education-list { display: grid; gap: 15px; }
+    .education-title { font-size: 1.1rem; font-weight: 750; }
+    .education-subtitle { color: var(--muted); margin-top: 6px; }
+    .date { display: inline-block; margin-top: 12px; color: var(--cyan); font-size: .88rem; }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    .tag { border: 1px solid var(--line); background: rgba(56, 213, 255, .07); color: var(--text); border-radius: 999px; padding: 7px 13px; font-size: .92rem; }
+    .contact-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .contact-label { font-size: .82rem; color: var(--muted); margin-bottom: 5px; }
+    .contact-grid a { overflow-wrap: anywhere; color: var(--cyan); text-decoration: none; }
+    .contact-grid a:hover { text-decoration: underline; }
+    footer { border-top: 1px solid var(--line); color: #92a2bd; padding: 24px 0 32px; font-size: .88rem; }
+    @media (max-width: 620px) {
+      .wrap { width: min(calc(100% - 28px), 1060px); }
+      header { align-items: flex-start; flex-direction: column; }
+      nav { gap: 14px; }
+      .hero { min-height: auto; padding: 68px 0; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .card { padding: 20px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .button { transition: none; } }
+  </style>
+</head>
+<body>
+  <header class="wrap" id="home">
+    <a class="brand" href="#home" aria-label="Diksha Goswami home">DIKSHA<span>.</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div>
+        <p class="eyebrow">Welcome to my corner of the web</p>
+        <h1 id="hero-title">I'm Diksha Goswami.<span>Computer Science Student.</span></h1>
+        <p class="intro">Pursuing a BTech in Computer Science and Engineering at Dhemaji Engineering College, under Assam Science and Technology University. Based in Guwahati, Assam, India.</p>
+        <div class="actions">
+          <a class="button primary" href="#contact">Get in touch <span aria-hidden="true">↗</span></a>
+          <a class="button" href="https://www.linkedin.com/in/diksha-goswami-8ba49b371" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="about">
+      <div class="section-heading"><h2>About me</h2><span class="kicker">/ Introduction</span></div>
+      <div class="card">
+        <p>I'm Diksha Goswami, a Computer Science and Engineering undergraduate based in Guwahati, Assam, India. My profile lists English among my top skills and includes an AI Tools Workshop certification.</p>
+      </div>
+    </section>
+
+    <section class="wrap" id="education">
+      <div class="section-heading"><h2>Education</h2><span class="kicker">/ Academic background</span></div>
+      <div class="education-list">
+        <article class="card">
+          <div class="education-title">Assam Science and Technology University (ASTU)</div>
+          <div class="education-subtitle">Bachelor of Technology (BTech), Computer Science and Engineering</div>
+          <span class="date">August 2025 – August 2029</span>
+        </article>
+        <article class="card">
+          <div class="education-title">Dhemaji Engineering College (DEC)</div>
+          <div class="education-subtitle">Bachelor of Technology (BTech), Computer Science and Engineering</div>
+          <span class="date">August 2025 – August 2029</span>
+        </article>
+        <article class="card">
+          <div class="education-title">Suderashan Public School</div>
+          <div class="education-subtitle">School listed on the profile</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap" id="skills">
+      <div class="section-heading"><h2>Skills & certification</h2><span class="kicker">/ Profile highlights</span></div>
+      <div class="card">
+        <h3>Top skill</h3>
+        <div class="tag-list"><span class="tag">English</span></div>
+        <h3 style="margin-top: 26px;">Certification</h3>
+        <div class="tag-list"><span class="tag">AI Tools Workshop</span></div>
+      </div>
+    </section>
+
+    <section class="wrap" id="contact">
+      <div class="section-heading"><h2>Contact</h2><span class="kicker">/ Let's connect</span></div>
+      <div class="contact-grid">
+        <div class="card">
+          <div class="contact-label">Email</div>
+          <a href="mailto:goswamidiksha295@gmail.com">goswamidiksha295@gmail.com</a>
+        </div>
+        <div class="card">
+          <div class="contact-label">LinkedIn</div>
+          <a href="https://www.linkedin.com/in/diksha-goswami-8ba49b371" target="_blank" rel="noopener noreferrer">View my LinkedIn profile ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© 2026 Diksha Goswami. Personal portfolio.</div>
+  </footer>
+</body>
+</html>
